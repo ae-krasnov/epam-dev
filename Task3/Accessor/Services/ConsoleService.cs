@@ -36,7 +36,7 @@ namespace Services
                     switch (Console.ReadLine().ToLower().Trim())
                     {
                         case "1":
-                            T [] t=getAll();
+                            T [] t=GetAll();
                             foreach (var item in t)
                             {
                                 printInfo(item);
@@ -44,12 +44,12 @@ namespace Services
                             break;
                         case "2":
                             Console.WriteLine("Введите id:");
-                            T FindedT=find(Int32.Parse(Console.ReadLine()));
+                            T FindedT=Find(Int32.Parse(Console.ReadLine()));
                             printInfo(FindedT);
                             break;
                         case "3":
                             Console.WriteLine("id для удаления");
-                            delete(Int32.Parse(Console.ReadLine()));
+                            Delete(Int32.Parse(Console.ReadLine()));
                             break;
                         case "q":
                             stop = true;
@@ -66,20 +66,20 @@ namespace Services
             }
         }
 
-        public T find(int id)
+        public T Find(int id)
         {
             T t = a.GetByID(id);
             return t;
         }
 
-        public T[] getAll()
+        public T[] GetAll()
         {
             T[] allObj = a.GetAll();
 
             return allObj;
         }
 
-        public void delete(int id)
+        public void Delete(int id)
         {
             a.RemoveByID(id);
         }

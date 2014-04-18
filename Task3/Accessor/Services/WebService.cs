@@ -8,13 +8,13 @@ using FactoriesDAL;
 
 namespace Services
 {
-    public class WinService<T>: IServices<T>
+    public class WebService<T>:IServices<T>
     {
         private IAccessor<T> _a;
 
-        public WinService(IAccessor<T> accessor)
+        public WebService(IAccessor<T> a) 
         {
-            _a = accessor;
+            _a = a;
         }
 
         public void Delete(int id)
@@ -24,7 +24,8 @@ namespace Services
 
         public T Find(int id)
         {
-            return _a.GetByID(id);
+            T obj = _a.GetByID(id);
+            return obj;
         }
 
         public T[] GetAll()

@@ -11,7 +11,9 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    
+        <asp:GridView ID="entityGrid" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -23,7 +25,24 @@
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
     
+        <asp:Label ID="DeleteByIdLabel" runat="server" Text="Удалить по Id:"></asp:Label>
+    
     </div>
+        <p>
+            <asp:TextBox ID="DelByIdTexBox" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <asp:Button ID="DeleteByIdButton" runat="server" OnClick="DeleteByIdButton_Click" Text="Удалить" />
+        </p>
+        <p id="findByIdLabel">
+            Поиск по id:</p>
+        <p>
+            <asp:TextBox ID="FindByIdTextBox" runat="server"></asp:TextBox>
+            <asp:Button ID="FindByIdButton" runat="server" OnClick="FindByIdButton_Click" style="margin-bottom: 0px" Text=" Найти" Width="67px" />
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Label ID="FoundByIdLabel" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

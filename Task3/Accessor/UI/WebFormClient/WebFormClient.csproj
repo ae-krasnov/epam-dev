@@ -57,7 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MyDBWebForm.sdf" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -83,6 +82,10 @@
     <ProjectReference Include="..\..\DAL\FactoriesDAL.csproj">
       <Project>{74fbd0e6-09d5-4518-8f6d-d24faa5cdcce}</Project>
       <Name>FactoriesDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Entities.csproj">
+      <Project>{f06e761a-1bda-4342-9b64-242d9da66cee}</Project>
+      <Name>Entities %28Entities\Entities%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Services.csproj">
       <Project>{ecadb386-c048-42be-970e-e81c6c23de58}</Project>

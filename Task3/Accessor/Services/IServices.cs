@@ -8,8 +8,8 @@ namespace Services
 {
     interface IServices<T>
     {
-        void delete(int id);
-        T find(int id);
-        T[] getAll();
+        void Delete(int id);
+        T Find(int id);
+        T[] GetAll();
     }
 }

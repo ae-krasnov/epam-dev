@@ -65,9 +65,11 @@ namespace FactoriesDAL
 
             using (SqlCeConnection cn=new SqlCeConnection(cnStr.ConnectionString))
             {
-
-                cn.Open();
-
+                try
+                {
+                    cn.Open();
+                }
+                catch { }
 
                 SqlCeCommand cmd = new SqlCeCommand(sqlQuery, cn);
 

@@ -23,3 +23,15 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task1\Accessor\UI\WebFormClient\bin\c
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task1\Accessor\UI\WebFormClient\bin\Services.pdb
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task1\Accessor\UI\WebFormClient\bin\Entities.dll
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task1\Accessor\UI\WebFormClient\bin\Entities.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\libraryDB.sdf
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\WebFormClient.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\WebFormClient.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\core.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\Entities.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\Services.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\core.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\Entities.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\bin\Services.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.pdb

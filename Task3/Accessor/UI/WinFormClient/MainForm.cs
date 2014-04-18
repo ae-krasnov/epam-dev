@@ -83,11 +83,11 @@ namespace WinFormClient
             {
                 case EntityType.Author:
                     AuthorClient = new WinService<Author>(new AuthorAccessorFactory().GetAccess());
-                    entityGridView.DataSource = AuthorClient.getAll();
+                    entityGridView.DataSource = AuthorClient.GetAll();
                     break;
                 case EntityType.Book:
                     BookClient = new WinService<Book>(new BookAccessorFactory().GetAccess());
-                    entityGridView.DataSource = BookClient.getAll();
+                    entityGridView.DataSource = BookClient.GetAll();
                     break;
             }
         }
@@ -99,11 +99,11 @@ namespace WinFormClient
                 object obj;
                 if (CurrentEntity == EntityType.Author)
                 {
-                    obj = AuthorClient.find(Int32.Parse(textFindId.Text.Trim()));
+                    obj = AuthorClient.Find(Int32.Parse(textFindId.Text.Trim()));
                 }
                 else
                 {
-                    obj = BookClient.find(Int32.Parse(textFindId.Text.Trim()));
+                    obj = BookClient.Find(Int32.Parse(textFindId.Text.Trim()));
                 }
                 if (obj != null)
                 {
@@ -127,13 +127,13 @@ namespace WinFormClient
             {
                 if (CurrentEntity == EntityType.Author)
                 {
-                    AuthorClient.delete(Int32.Parse(textRemoveId.Text));
-                    entityGridView.DataSource = AuthorClient.getAll();
+                    AuthorClient.Delete(Int32.Parse(textRemoveId.Text));
+                    entityGridView.DataSource = AuthorClient.GetAll();
                 }
                 else
                 {
-                    BookClient.delete(Int32.Parse(textRemoveId.Text));
-                    entityGridView.DataSource = BookClient.getAll();
+                    BookClient.Delete(Int32.Parse(textRemoveId.Text));
+                    entityGridView.DataSource = BookClient.GetAll();
                 }
             }
         }
