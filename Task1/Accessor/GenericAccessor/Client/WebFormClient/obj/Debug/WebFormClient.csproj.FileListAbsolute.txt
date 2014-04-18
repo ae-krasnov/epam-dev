@@ -1,7 +1,0 @@
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\bin\WebFormClient.dll
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\bin\WebFormClient.pdb
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\bin\core.dll
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\bin\core.pdb
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\obj\Debug\WebFormClient.csprojResolveAssemblyReference.cache
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\obj\Debug\WebFormClient.dll
-C:\Users\Andrey\Desktop\personAccess-master\personAccess-master\PersonAccess\GenericAccessor\Client\WebFormClient\obj\Debug\WebFormClient.pdb
