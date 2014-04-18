@@ -15,7 +15,7 @@ namespace FactoriesDAL
     {
         private class FileAccessor:IAccessor<Author>
         {
-            const string PATH_TO_FILE = @"res/AuthorCollection.xml";
+            const string PATH_TO_FILE = "AuthorCollection.xml";
 
             public Author[] GetAll()
             {

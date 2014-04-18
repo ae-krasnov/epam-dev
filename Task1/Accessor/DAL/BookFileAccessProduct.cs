@@ -16,7 +16,7 @@ namespace FactoriesDAL
 
         private class FileAccessor:IAccessor<Book>
         {
-            const string PATH_TO_FILE = @"res/BookCollection.xml";
+            const string PATH_TO_FILE = "BookCollection.xml";
 
             public Book[] GetAll()
             {
@@ -68,13 +68,13 @@ namespace FactoriesDAL
                 XDocument personCollection = XDocument.Load(PATH_TO_FILE);
 
                 var bookId = from p in personCollection.Descendants("Book")
-                                 select p.Element("id").Value;
+                                 select p.Element("IdBook").Value;
 
                 var authorId = from p in personCollection.Descendants("Book")
-                                select p.Element("author").Value;
+                               select p.Element("Author_id").Value;
 
                 var name = from p in personCollection.Descendants("Book")
-                               select p.Element("name").Value;
+                           select p.Element("Name").Value;
 
                 object[] id =bookId.ToArray();
                 object[] author = authorId.ToArray();
