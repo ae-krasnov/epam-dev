@@ -31,3 +31,17 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\DAL\bin\Debug\Services
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\DAL\obj\Debug\FactoriesDAL.csprojResolveAssemblyReference.cache
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\DAL\obj\Debug\core.dll
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task3\Accessor\DAL\obj\Debug\core.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\libraryDB.sdf
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\core.dll.config
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\core.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\core.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\Entities.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\NLog.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\Services.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\Entities.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\ConsoleClient.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\NLog.xml
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\bin\Debug\Services.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\obj\Debug\FactoriesDAL.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\obj\Debug\core.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\DAL\obj\Debug\core.pdb

@@ -45,7 +45,15 @@ namespace FactoriesDAL
 
                 using (SqlCeConnection cn=new SqlCeConnection(cnStr.ConnectionString))
                 {
-                    cn.Open();
+                    try
+                    {
+                        cn.Open();
+                    }
+                    catch (SqlCeException ex)
+                    {
+                        NLogger.WriteErrorInLog(ex.Message);
+                        throw ex;
+                    }
 
                     using (SqlCeCommand cmd=new SqlCeCommand(sqlQuery,cn))
                     {
@@ -60,7 +68,15 @@ namespace FactoriesDAL
 
                 using (SqlCeConnection cn = new SqlCeConnection(cnStr.ConnectionString))
                 {
-                    cn.Open();
+                    try
+                    {
+                        cn.Open();
+                    }
+                    catch (SqlCeException ex)
+                    {
+                        NLogger.WriteErrorInLog(ex.Message);
+                        throw ex;
+                    }
 
                     SqlCeCommand cmd = new SqlCeCommand(sqlQuery, cn);
 

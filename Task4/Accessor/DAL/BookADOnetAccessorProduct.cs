@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Configuration;
 
 using Entities;
@@ -14,7 +14,7 @@ namespace FactoriesDAL
     {
         private class ADOnetAccessor:IAccessor<Book>
         {
-            SqlConnectionStringBuilder cnStr = new SqlConnectionStringBuilder();
+            SqlCeConnectionStringBuilder cnStr = new SqlCeConnectionStringBuilder();
 
             public Book[] GetAll()
             {
@@ -42,11 +42,19 @@ namespace FactoriesDAL
             {
                 string sqlQuery = "DELETE FROM table_Book WHERE bookId_field=" + id;
 
-                using (SqlConnection cn = new SqlConnection(cnStr.ConnectionString))
+                using (SqlCeConnection cn = new SqlCeConnection(cnStr.ConnectionString))
                 {
-                    cn.Open();
+                    try
+                    {
+                        cn.Open();
+                    }
+                    catch (SqlCeException ex)
+                    {
+                        NLogger.WriteErrorInLog(ex.Message);
+                        throw ex;
+                    }
 
-                    using (SqlCommand cmd = new SqlCommand(sqlQuery, cn))
+                    using (SqlCeCommand cmd = new SqlCeCommand(sqlQuery, cn))
                     {
                         cmd.ExecuteNonQuery();
                     }
@@ -57,13 +65,21 @@ namespace FactoriesDAL
             {
                 HashSet<Book> res = new HashSet<Book>();
 
-                using (SqlConnection cn = new SqlConnection(cnStr.ConnectionString))
+                using (SqlCeConnection cn = new SqlCeConnection(cnStr.ConnectionString))
                 {
-                    cn.Open();
+                    try
+                    {
+                        cn.Open();
+                    }
+                    catch (SqlCeException ex)
+                    {
+                        NLogger.WriteErrorInLog(ex.Message);
+                        throw ex;
+                    }
 
-                    SqlCommand cmnd = new SqlCommand(sqlQuery, cn);
+                    SqlCeCommand cmnd = new SqlCeCommand(sqlQuery, cn);
 
-                    using (SqlDataReader myReader = cmnd.ExecuteReader())
+                    using (SqlCeDataReader myReader = cmnd.ExecuteReader())
                     {
                         while (myReader.Read())
                         {
