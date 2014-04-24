@@ -1,0 +1,16 @@
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.dll.config
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.dll
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.pdb
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\bin\Debug\ConsoleClient.exe
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\bin\Debug\ConsoleClient.pdb
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.csprojResolveAssemblyReference.cache
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.dll
+C:\Users\androidDev\Desktop\epam\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.pdb
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.dll.config
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.dll
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\bin\Debug\core.pdb
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\bin\Debug\ConsoleClient.exe
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\bin\Debug\ConsoleClient.pdb
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.csprojResolveAssemblyReference.cache
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.dll
+C:\Users\Andrey_Krasnov\GitRep\personAccess\PersonAccess\GenericAccessor\obj\Debug\core.pdb
