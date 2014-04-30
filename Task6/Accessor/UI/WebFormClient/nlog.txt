@@ -1,0 +1,1 @@
+04/24/2014 13:12:01|Error|Не удается найти файл базы данных. Проверьте путь к базе данных. [ Data Source = C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WebFormClient\App_Data\libraryDB.sdf1 ]
