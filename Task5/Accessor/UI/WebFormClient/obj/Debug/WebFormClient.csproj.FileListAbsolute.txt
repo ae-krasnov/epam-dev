@@ -49,3 +49,5 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WebFormClient\bin\N
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.csprojResolveAssemblyReference.cache
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.dll
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.pdb
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.csprojResolveAssemblyReference.cache
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WebFormClient\obj\Debug\WebFormClient.dll

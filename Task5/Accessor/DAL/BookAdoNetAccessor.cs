@@ -8,11 +8,9 @@ using System.Configuration;
 
 using Entities;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class BookADOnetAccessorProduct: IAccessorProduct<Book>
-    {
-        private class ADOnetAccessor:IAccessor<Book>
+        public class BookAdoNetAccessor:IAccessor<Book>
         {
             SqlCeConnectionStringBuilder cnStr = new SqlCeConnectionStringBuilder();
 
@@ -27,7 +25,7 @@ namespace FactoriesDAL
 
             public Book GetByID(int id)
             {
-                string sqlQuery = "SELECT * FROM table_Book WHERE bookId_field=" + id;
+                string sqlQuery = "SELECT * FROM book_table WHERE bookId_field=" + id;
 
                 HashSet<Book> res = DoSqlQuery(sqlQuery);
 
@@ -40,7 +38,7 @@ namespace FactoriesDAL
 
             public void RemoveByID(int id)
             {
-                string sqlQuery = "DELETE FROM table_Book WHERE bookId_field=" + id;
+                string sqlQuery = "DELETE FROM book_table WHERE bookId_field=" + id;
 
                 using (SqlCeConnection cn = new SqlCeConnection(cnStr.ConnectionString))
                 {
@@ -95,15 +93,9 @@ namespace FactoriesDAL
                 return res;
             }
 
-            public ADOnetAccessor()
+            public BookAdoNetAccessor()
             {
                 cnStr.ConnectionString = ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString;
             }
         }
-       
-        public IAccessor<Book> GetAccessor()
-        {
-            return new ADOnetAccessor();
-        }
-    }
 }

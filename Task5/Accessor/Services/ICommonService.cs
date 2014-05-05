@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FactoriesDAL
+namespace Services
 {
-    interface IAccessorProduct<T>
+    public interface ICommonService
     {
-        IAccessor<T> GetAccessor();
     }
 }

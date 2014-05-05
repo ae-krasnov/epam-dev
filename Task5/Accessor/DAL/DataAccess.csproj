@@ -74,16 +74,13 @@
   <ItemGroup>
     <Compile Include="Factory.cs" />
     <Compile Include="MyORM.cs" />
-    <Compile Include="AuthorAccessorFactory.cs" />
     <Compile Include="IAccessor.cs" />
-    <Compile Include="IAccessorProduct.cs" />
-    <Compile Include="AuthorADOnetAccessorProduct.cs" />
-    <Compile Include="AuthorFileAccessProduct.cs" />
-    <Compile Include="AuthorMemoryAccessProduct.cs" />
-    <Compile Include="BookAccessorFactory.cs" />
-    <Compile Include="BookADOnetAccessorProduct.cs" />
-    <Compile Include="BookFileAccessProduct.cs" />
-    <Compile Include="BookMemoryAccessProduct.cs" />
+    <Compile Include="AuthorAdoNetAccessor.cs" />
+    <Compile Include="AuthorFileAccessor.cs" />
+    <Compile Include="AuthorMemoryAccess.cs" />
+    <Compile Include="BookAdoNetAccessor.cs" />
+    <Compile Include="BookFileAccessor.cs" />
+    <Compile Include="BookMemoryAccessor.cs" />
     <Compile Include="NLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -128,7 +125,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{f06e761a-1bda-4342-9b64-242d9da66cee}</Project>
-      <Name>Entities %28Entities\Entities%29</Name>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

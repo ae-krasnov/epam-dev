@@ -9,12 +9,9 @@ using System.IO;
 
 using Entities;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class BookFileAccessProduct: IAccessorProduct<Book>
-    {
-
-        private class FileAccessor:IAccessor<Book>
+        public class BookFileAccessor:IAccessor<Book>
         {
             const string PATH_TO_FILE = "BookCollection.xml";
 
@@ -89,10 +86,4 @@ namespace FactoriesDAL
                 return res;
             }
         }
-
-        public IAccessor<Book> GetAccessor()
-        {
-            return new FileAccessor();
-        }
-    }
 }

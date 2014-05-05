@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\..\..\Desktop\unity_sample\CS\Stoplight\Src\bin\Debug\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\..\..\Desktop\unity_sample\CS\Stoplight\Src\bin\Debug\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,17 +55,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DAL\FactoriesDAL.csproj">
+    <ProjectReference Include="..\..\DAL\DataAccess.csproj">
       <Project>{74fbd0e6-09d5-4518-8f6d-d24faa5cdcce}</Project>
-      <Name>FactoriesDAL</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Entities\Entities.csproj">
       <Project>{f06e761a-1bda-4342-9b64-242d9da66cee}</Project>
-      <Name>Entities %28Entities\Entities%29</Name>
+      <Name>Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Services.csproj">
       <Project>{ecadb386-c048-42be-970e-e81c6c23de58}</Project>
-      <Name>Services %28Services\Services%29</Name>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

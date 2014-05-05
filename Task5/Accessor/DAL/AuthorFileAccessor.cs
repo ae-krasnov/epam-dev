@@ -9,11 +9,9 @@ using System.IO;
 
 using Entities;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class AuthorFileAccessProduct: IAccessorProduct<Author>
-    {
-        private class FileAccessor:IAccessor<Author>
+        public class AuthorFileAccessor:IAccessor<Author>
         {
             const string PATH_TO_FILE = "AuthorCollection.xml";
 
@@ -90,9 +88,4 @@ namespace FactoriesDAL
                 return res;
             }
         }
-        public IAccessor<Author> GetAccessor()
-        {
-            return new FileAccessor();
-        }
-    }
 }

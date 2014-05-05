@@ -9,11 +9,9 @@ using System.IO;
 
 using Entities;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class AuthorADOnetAccessorProduct:IAccessorProduct<Author>
-    {
-        private class ADOnetAccessor:IAccessor<Author>
+        public class AuthorAdoNetAccessor:IAccessor<Author>
         {
             SqlCeConnectionStringBuilder cnStr=new SqlCeConnectionStringBuilder();
 
@@ -96,15 +94,9 @@ namespace FactoriesDAL
                 return res;
             }
 
-            public ADOnetAccessor()
+            public AuthorAdoNetAccessor()
             {
                 cnStr.ConnectionString = ConfigurationManager.ConnectionStrings["cnStr"].ConnectionString;
             }
         }
-
-        public IAccessor<Author> GetAccessor()
-        {
-            return new ADOnetAccessor();
-        }
-    }
 }

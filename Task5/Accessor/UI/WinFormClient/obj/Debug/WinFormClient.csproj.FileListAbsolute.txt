@@ -86,3 +86,8 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WinFormClient\obj\D
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.MainForm.resources
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task4\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.MainForm.resources
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
+C:\Users\andrey\EpamRep\epam-dev\Task5\Accessor\UI\WinFormClient\obj\Debug\WinFormClient.exe

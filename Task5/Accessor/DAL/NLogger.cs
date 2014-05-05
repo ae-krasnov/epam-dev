@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using NLog;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
     class NLogger
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    interface IServices<T>
+    public interface IServices<T>: ICommonService
     {
         void Delete(int id);
         T Find(int id);

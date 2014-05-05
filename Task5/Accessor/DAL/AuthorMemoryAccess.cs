@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 using Entities;
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class AuthorMemoryAccessProduct: IAccessorProduct<Author>
-    {
-        private class MemoryAccess: IAccessor<Author>
+        public class AuthorMemoryAccess: IAccessor<Author>
         {
 
             public Author[] GetAll()
@@ -41,10 +39,4 @@ namespace FactoriesDAL
                 }
             }
         }
-
-        public IAccessor<Author> GetAccessor()
-        {
-            return new MemoryAccess();
-        }
-    }
 }

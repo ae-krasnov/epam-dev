@@ -1,4 +1,4 @@
-﻿namespace FactoriesDAL.Properties {
+﻿namespace DataAccess.Properties {
     
     
     // Этот класс позволяет обрабатывать определенные события в классе параметров:

@@ -11,9 +11,9 @@ using System.Data.SqlServerCe;
 using Entities;
 
 
-namespace FactoriesDAL
+namespace DataAccess
 {
-    class MyORM<T>: IAccessor<T>
+    public class MyORM<T>: IAccessor<T>
     {
         SqlCeConnectionStringBuilder cnStr;//строка подлключения
 
