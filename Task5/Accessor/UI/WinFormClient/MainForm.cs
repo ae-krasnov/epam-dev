@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+
+using Microsoft.Practices.Unity;
 using System.Reflection;
 
 using DataAccess;
@@ -20,21 +22,20 @@ namespace WinFormClient
     {
         bool FindIdFieldHasError=true;
         bool RemoveIdFieldHasError = true;
-
-        WinService<Author> AuthorClient;
-        WinService<Book> BookClient;
-
-        EntityType CurrentEntity;
-        enum EntityType
-        {
-            Author,
-            Book
-        }
+        object CommonService;
+        IUnityContainer Container=new UnityContainer();
 
         public MainForm()
         {
             InitializeComponent();
-
+            Container.RegisterType(typeof(IServices<>), typeof(Service<>));
+            radioAuthor.CheckedChanged += radioButtons_CheckedChanged;
+            radioBook.CheckedChanged += radioButtons_CheckedChanged;
+            radioADONet.CheckedChanged += radioButtons_CheckedChanged;
+            radioFile.CheckedChanged += radioButtons_CheckedChanged;
+            radioMemory.CheckedChanged += radioButtons_CheckedChanged;
+            radioMyORM.CheckedChanged += radioButtons_CheckedChanged;
+            radioAuthor.Checked = true;
             textFindId.Validated += (sender, e) => 
             {
                 if (textFindId.Text.Length > 0)
@@ -77,19 +78,6 @@ namespace WinFormClient
             {
                 errorId.Clear();
             };
-
-            CurrentEntity = (EntityType)Enum.Parse(typeof(EntityType), ConfigurationManager.AppSettings["EntityType"]);
-            switch (CurrentEntity)
-            {
-                case EntityType.Author:
-                    AuthorClient = new WinService<Author>(new AuthorAccessorFactory().GetAccess());
-                    entityGridView.DataSource = AuthorClient.GetAll();
-                    break;
-                case EntityType.Book:
-                    BookClient = new WinService<Book>(new BookAccessorFactory().GetAccess());
-                    entityGridView.DataSource = BookClient.GetAll();
-                    break;
-            }
         }
 
         private void buttonFind_Click(object sender, EventArgs e)
@@ -97,13 +85,15 @@ namespace WinFormClient
             if (!FindIdFieldHasError)
             {
                 object obj;
-                if (CurrentEntity == EntityType.Author)
+                if (CommonService is IServices<Author>)
                 {
-                    obj = AuthorClient.Find(Int32.Parse(textFindId.Text.Trim()));
+                    var authorService = (IServices<Author>)CommonService;
+                    obj = authorService.Find(Int32.Parse(textFindId.Text.Trim()));
                 }
                 else
                 {
-                    obj = BookClient.Find(Int32.Parse(textFindId.Text.Trim()));
+                    var bookService = (IServices<Book>)CommonService;
+                    obj = bookService.Find(Int32.Parse(textFindId.Text.Trim()));
                 }
                 if (obj != null)
                 {
@@ -125,16 +115,75 @@ namespace WinFormClient
         {
             if (!RemoveIdFieldHasError)
             {
-                if (CurrentEntity == EntityType.Author)
+                if (CommonService is IServices<Author>)
                 {
-                    AuthorClient.Delete(Int32.Parse(textRemoveId.Text));
-                    entityGridView.DataSource = AuthorClient.GetAll();
+                    var authorServices = (IServices<Author>)CommonService;
+                    authorServices.Delete(Int32.Parse(textRemoveId.Text));
+                    entityGridView.DataSource = authorServices.GetAll();
                 }
                 else
                 {
-                    BookClient.Delete(Int32.Parse(textRemoveId.Text));
-                    entityGridView.DataSource = BookClient.GetAll();
+                    var bookServices = (IServices<Book>)CommonService;
+                    bookServices.Delete(Int32.Parse(textRemoveId.Text));
+                    entityGridView.DataSource = bookServices.GetAll();
                 }
+            }
+        }
+
+        private void radioButtons_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAuthor.Checked)
+            {
+                registerAuthorDAL();
+                CommonService = Container.Resolve<IServices<Author>>();
+                var authorService = (IServices<Author>)CommonService;
+                entityGridView.DataSource = authorService.GetAll();
+            }
+            else
+            {
+                registerBookDAL();
+                CommonService = Container.Resolve<IServices<Book>>();
+                var bookService = (IServices<Book>)CommonService;
+                entityGridView.DataSource = bookService.GetAll();
+            }
+        }
+
+        private void registerAuthorDAL() 
+        {
+            if (radioMyORM.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(MyORM<Author>));
+            }
+            else if (radioFile.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>),typeof(AuthorFileAccessor));
+            }
+            else if (radioMemory.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(AuthorMemoryAccess));
+            }
+            else if (radioADONet.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(AuthorAdoNetAccessor));
+            }
+        }
+        private void registerBookDAL() 
+        {
+            if (radioMyORM.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(MyORM<Book>));
+            }
+            else if (radioFile.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(BookFileAccessor));
+            }
+            else if (radioMemory.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(BookMemoryAccessor));
+            }
+            else if (radioADONet.Checked)
+            {
+                Container.RegisterType(typeof(IAccessor<>), typeof(BookAdoNetAccessor));
             }
         }
     }

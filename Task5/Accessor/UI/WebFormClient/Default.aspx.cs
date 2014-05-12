@@ -16,29 +16,45 @@ namespace WebFormClient
 {
     public partial class Default : System.Web.UI.Page
     {
-        WebService<Author> AuthorClient;
-        WebService<Book> BookClient;
+        Service<Author> authorService;
+        Service<Book> bookService;
 
         EntityType CurrentEntity;
         enum EntityType
         {
-            Author,
-            Book
+            author,
+            book
+        }
+
+        protected Default()
+        {
+        }
+
+        public Default(object commonServer) 
+        {
+            if (commonServer is Service<Author>)
+            {
+                authorService = (Service<Author>)commonServer;
+                CurrentEntity = EntityType.author;
+            }
+            else
+            {
+                bookService = (Service<Book>)commonServer;
+                CurrentEntity = EntityType.book;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CurrentEntity = (EntityType)Enum.Parse(typeof(EntityType), ConfigurationManager.AppSettings["EntityType"]);
+            //CurrentEntity = (EntityType)Enum.Parse(typeof(EntityType), ConfigurationManager.AppSettings["EntityType"]);
             switch (CurrentEntity)
             {
-                case EntityType.Author:
-                    AuthorClient = new WebService<Author>(new AuthorAccessorFactory().GetAccess());
-                    entityGrid.DataSource = AuthorClient.GetAll();
+                case EntityType.author:
+                    entityGrid.DataSource = authorService.GetAll();
                     entityGrid.DataBind();
                     break;
-                case EntityType.Book:
-                    BookClient = new WebService<Book>(new BookAccessorFactory().GetAccess());
-                    entityGrid.DataSource = BookClient.GetAll();
+                case EntityType.book:
+                    entityGrid.DataSource = bookService.GetAll();
                     entityGrid.DataBind();
                     break;
             }
@@ -56,11 +72,11 @@ namespace WebFormClient
                     object obj = null;
                     switch (CurrentEntity)
                     {
-                        case EntityType.Author:
-                            obj = AuthorClient.Find(Int32.Parse(foundId.Trim()));
+                        case EntityType.author:
+                            obj = authorService.Find(Int32.Parse(foundId.Trim()));
                             break;
-                        case EntityType.Book:
-                            obj = BookClient.Find(Int32.Parse(foundId.Trim()));
+                        case EntityType.book:
+                            obj = bookService.Find(Int32.Parse(foundId.Trim()));
                             break;
                     }
                     if (obj != null)
@@ -96,14 +112,14 @@ namespace WebFormClient
                 {
                     switch (CurrentEntity)
                     {
-                        case EntityType.Author:
-                            AuthorClient.Delete(Int32.Parse(delId.Trim()));
-                            entityGrid.DataSource = AuthorClient.GetAll();
+                        case EntityType.author:
+                            authorService.Delete(Int32.Parse(delId.Trim()));
+                            entityGrid.DataSource = authorService.GetAll();
                             entityGrid.DataBind();
                             break;
-                        case EntityType.Book:
-                            BookClient.Delete(Int32.Parse(delId.Trim()));
-                            entityGrid.DataSource = BookClient.GetAll();
+                        case EntityType.book:
+                            bookService.Delete(Int32.Parse(delId.Trim()));
+                            entityGrid.DataSource = bookService.GetAll();
                             entityGrid.DataBind();
                             break;
                     }
