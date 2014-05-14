@@ -10,6 +10,7 @@ using Microsoft.Practices.Unity;
 
 using Containers;
 using DataAccess;
+using Loggers;
 using Services;
 using Entities;
 
@@ -19,26 +20,49 @@ namespace ConsoleClient
     {
         static object CommonService;
         static IContainer container;
+        static ILogger log;
 
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("Выберите тип Logger\n1)NLog (по-умолчанию)\n2)Log4Net\n3)MyLogger");
+            switch (Console.ReadLine().Trim())
+            {
+                case "1":
+                    log = new AdapterNLog();
+                    break;
+                case "2":
+                    log = new AdapterLog4Net(typeof(Program));
+                    break;
+                case "3":
+                    log = new MyLogger();
+                    break;
+                default:
+                    Console.WriteLine("Неверное значение, был выбран IoC по-умолчанию");
+                    log = new AdapterNLog();
+                    break;
+            }
 
             Console.WriteLine("Выберите тип IoC\n1)Unity (по-умолчанию)\n2)Autofac\n3)MyContainer");
             switch (Console.ReadLine().Trim())
             {
                 case "1":
                     container = new AdapterUnity();
+                    log.WriteToLog("IoC-Unity");
                     break;
                 case "2":
                     container = new AdapterAutofac();
+                    log.WriteToLog("IoC-Autofac");
                     break;
                 case "3":
                     container = new MyContainer();
+                    log.WriteToLog("IoC-MyContainer");
                     break;
                 default:
                     Console.WriteLine("Неверное значение, был выбран IoC по-умолчанию");
                     container = new AdapterUnity();
+                    log.WriteToLog("IoC-Unity");
                     break;
             }
             
@@ -50,17 +74,20 @@ namespace ConsoleClient
                     container.RegisterType(typeof(IServices<Author>), typeof(Service<Author>));
                     AdjustAuthorDal(container);                    
                     CommonService = container.ResolveType(typeof(Service<Author>));
+                    log.WriteToLog("entity-author");
                     break;
                 case "2":
                     container.RegisterType(typeof(IServices<Book>), typeof(Service<Book>));
                     AdjustBookDal(container);
                     CommonService = container.ResolveType(typeof(Service<Book>));
+                    log.WriteToLog("entity-book");
                     break;
                 default:
                     Console.WriteLine("Неверное значение, была выбрана сущность по-умолчанию");
                     container.RegisterType(typeof(IServices<Author>), typeof(Service<Author>));
                     AdjustAuthorDal(container);
                     CommonService = container.ResolveType(typeof(Service<Author>));
+                    log.WriteToLog("entity-author");
                     break;
             }
 

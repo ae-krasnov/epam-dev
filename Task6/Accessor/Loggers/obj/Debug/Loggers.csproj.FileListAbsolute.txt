@@ -1,0 +1,9 @@
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\Loggers.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\Loggers.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\NLog.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\NLog.xml
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\obj\Debug\Loggers.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\obj\Debug\Loggers.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\obj\Debug\Loggers.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\log4net.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\Loggers\bin\Debug\log4net.xml

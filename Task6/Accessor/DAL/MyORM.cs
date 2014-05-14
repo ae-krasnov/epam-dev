@@ -15,22 +15,22 @@ namespace DataAccess
 {
     public class MyORM<T>: IAccessor<T>
     {
-        SqlCeConnectionStringBuilder cnStr;//строка подлключения
+        SqlCeConnectionStringBuilder cnStr;// строка подлключения
 
-        Type currentType;//текущий тип Т
-        TableNameAttribute tableName;//аттрибут с именем таблицы
-        PropertyInfo[] objProperties;//все свойства типа
+        Type currentType;// текущий тип Т
+        TableNameAttribute tableName;// аттрибут с именем таблицы
+        PropertyInfo[] objProperties;// все свойства типа
 
-        LinkedList<Type> fieldTypes = new LinkedList<Type>();//тип полей
-        LinkedList<PropertyInfo> propName = new LinkedList<PropertyInfo>();//свойства помеченный атрибутом
-        LinkedList<String> fieldName = new LinkedList<string>();//название столбцов из БД
+        LinkedList<Type> fieldTypes = new LinkedList<Type>();// тип полей
+        LinkedList<PropertyInfo> propName = new LinkedList<PropertyInfo>();// свойства помеченный атрибутом
+        LinkedList<String> fieldName = new LinkedList<string>();// название столбцов из БД
 
-        //массивы из коллекций LinkedList
+        // массивы из коллекций LinkedList
         Type[] fType;
         PropertyInfo[] pInfo;
         string[] fName;
 
-        string sqlQuery;//строка запроса к БД
+        string sqlQuery;// строка запроса к БД
 
         public MyORM()
         {
@@ -41,11 +41,11 @@ namespace DataAccess
         public T[] GetAll()
         {
 
-            InitializeProperties();//инициализируем переменные
+            InitializeProperties();// инициализируем переменные
 
             HashSet<T> result = new HashSet<T>();
 
-            //собираем строку запроса
+            // собираем строку запроса
             sqlQuery = "SELECT ";
 
             for (int i = 0; i < fName.Length;i++) 
@@ -77,15 +77,15 @@ namespace DataAccess
 
                 SqlCeCommand cmd = new SqlCeCommand(sqlQuery, cn);
 
-                using (SqlCeDataReader data=cmd.ExecuteReader())//выполняем запрос
+                using (SqlCeDataReader data=cmd.ExecuteReader())// выполняем запрос
                 {
                     while (data.Read())
                     {
-                        object item = Activator.CreateInstance(typeof(T));//создаем объект
+                        object item = Activator.CreateInstance(typeof(T));// создаем объект
 
                         for (int i = 0; i < pInfo.Length; i++)
                         {
-                            switch (fType[i].Name)//инициализируем его свойства
+                            switch (fType[i].Name)// инициализируем его свойства
                             {
                                 case "Int32":
                                     int valueInt = (int)data[fName[i]];
@@ -101,7 +101,7 @@ namespace DataAccess
                                     break;
                             }
                         }
-                        result.Add((T)item);//добавляем в результирующую коллекцию
+                        result.Add((T)item);// добавляем в результирующую коллекцию
 
                         item = null;
                     }
@@ -115,11 +115,11 @@ namespace DataAccess
 
         public T GetByID(int id)
         {
-            InitializeProperties();//инициализируем переменные
+            InitializeProperties();// инициализируем переменные
 
             HashSet<T> result = new HashSet<T>();
 
-            //собираем строку запроса
+            // собираем строку запроса
             sqlQuery = "SELECT ";
 
             for (int i = 0; i < fName.Length; i++)
@@ -151,15 +151,15 @@ namespace DataAccess
 
                 SqlCeCommand cmd = new SqlCeCommand(sqlQuery, cn);
 
-                using (SqlCeDataReader data = cmd.ExecuteReader())//выполняем запрос
+                using (SqlCeDataReader data = cmd.ExecuteReader())// выполняем запрос
                 {
                     while (data.Read())
                     {
-                        object item = Activator.CreateInstance(typeof(T));//создаем объект
+                        object item = Activator.CreateInstance(typeof(T));// создаем объект
 
                         for (int i = 0; i < pInfo.Length; i++)
                         {
-                            switch (fType[i].Name)//инициализируем его свойства
+                            switch (fType[i].Name)// инициализируем его свойства
                             {
                                 case "Int32":
                                     int valueInt = (int)data[fName[i]];
@@ -175,14 +175,14 @@ namespace DataAccess
                                     break;
                             }
                         }
-                        result.Add((T)item);//добавляем в результирующую коллекцию
+                        result.Add((T)item);// добавляем в результирующую коллекцию
 
                         item = null;
                     }
                 }
             }
 
-            ClearCollection();//очищаем коллекции для нового вызова
+            ClearCollection();// очищаем коллекции для нового вызова
             if (result.Count!=0)
                 return result.First();
             else
@@ -210,21 +210,21 @@ namespace DataAccess
 
         void InitializeProperties()
         {
-            currentType = typeof(T);//текущий тип
+            currentType = typeof(T);// текущий тип
 
-            tableName = (TableNameAttribute)currentType.GetCustomAttribute(typeof(TableNameAttribute), false);//получаем аттрибут с именем таблицы
+            tableName = (TableNameAttribute)currentType.GetCustomAttribute(typeof(TableNameAttribute), false);// получаем аттрибут с именем таблицы
 
-            objProperties = currentType.GetProperties();//получаем все свойства
+            objProperties = currentType.GetProperties();// получаем все свойства
 
             foreach (PropertyInfo p in objProperties)
             {
-                FieldNameAttribute fieldAttr = (FieldNameAttribute)p.GetCustomAttribute(typeof(FieldNameAttribute), false);//если свойство помечено аттрибутом
+                FieldNameAttribute fieldAttr = (FieldNameAttribute)p.GetCustomAttribute(typeof(FieldNameAttribute), false);// если свойство помечено аттрибутом
                 if (fieldAttr != null)
                 {
-                    //то заполняем коллекции
-                    fieldName.AddFirst(fieldAttr.fieldName);//имя столбца в БД
-                    fieldTypes.AddFirst(fieldAttr.fieldType);//тип столбца
-                    propName.AddFirst(p);//свойство, помеченное аттрибутом
+                    // то заполняем коллекции
+                    fieldName.AddFirst(fieldAttr.fieldName);// имя столбца в БД
+                    fieldTypes.AddFirst(fieldAttr.fieldType);// тип столбца
+                    propName.AddFirst(p);// свойство, помеченное аттрибутом
                 }
             }
 

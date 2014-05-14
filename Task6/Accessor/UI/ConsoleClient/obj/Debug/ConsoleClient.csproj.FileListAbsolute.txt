@@ -132,3 +132,7 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\D
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\NLog.xml
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\Loggers.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\Loggers.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\log4net.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task6\Accessor\UI\ConsoleClient\bin\Debug\log4net.xml
