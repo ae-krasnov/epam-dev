@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Xml.XPath;
 using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.IO;
@@ -63,26 +65,20 @@ namespace DataAccess
                     SaveToFile(Entities.MemoryDB.Authors);
 
                 XDocument AuthorCollection = XDocument.Load(PATH_TO_FILE);
+                
+                // XPath чтобы получить значения из файла
+                IEnumerable<XElement> AuthorName = (IEnumerable<XElement>)AuthorCollection.XPathSelectElements("/ArrayOfAuthor/Author/Name");
+                IEnumerable<XElement> AuthorAge = (IEnumerable<XElement>)AuthorCollection.XPathSelectElements("/ArrayOfAuthor/Author/Age");
+                IEnumerable<XElement> AuthorId = (IEnumerable<XElement>)AuthorCollection.XPathSelectElements("/ArrayOfAuthor/Author/ID");
+                XElement[] names = AuthorName.ToArray();
+                XElement[] ages = AuthorAge.ToArray();
+                XElement[] id = AuthorId.ToArray();
 
-                //два linq запроса для получения имен и возраста
-                var AuthorName = from p in AuthorCollection.Descendants("Author")
-                                 select p.Element("Name").Value;
-
-                var AuthorAge = from p in AuthorCollection.Descendants("Author")
-                                select p.Element("Age").Value;
-
-                var AuthorId = from p in AuthorCollection.Descendants("Author")
-                               select p.Element("ID").Value;
-
-                object[] names = AuthorName.ToArray();
-                object[] ages = AuthorAge.ToArray();
-                object[] id = AuthorId.ToArray();
-
-                //создаем коллекцию из полученных значений
+                // создаем коллекцию из полученных значений
                 HashSet<Author> res = new HashSet<Author>();
                 for (int i = 0; i < names.Length; i++)
                 {
-                    res.Add(new Author(names[i].ToString(), Int32.Parse(ages[i].ToString()), Int32.Parse(id[i].ToString())));
+                    res.Add(new Author(names[i].Value.ToString(), Int32.Parse(ages[i].Value.ToString()), Int32.Parse(id[i].Value.ToString())));
                 }
 
                 return res;

@@ -5,4 +5,9 @@
     <Age>33</Age>
     <ID>1</ID>
   </Author>
+  <Author>
+    <Name>Jeffrey Richter</Name>
+    <Age>33</Age>
+    <ID>2</ID>
+  </Author>
 </ArrayOfAuthor>
