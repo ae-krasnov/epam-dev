@@ -23,12 +23,12 @@ namespace WinFormClient
         bool FindIdFieldHasError=true;
         bool RemoveIdFieldHasError = true;
         object CommonService;
-        IUnityContainer Container=new UnityContainer();
+        IUnityContainer MyContainer=new UnityContainer();
 
         public MainForm()
         {
             InitializeComponent();
-            Container.RegisterType(typeof(IServices<>), typeof(Service<>));
+            MyContainer.RegisterType(typeof(IServices<>), typeof(Service<>));
             radioAuthor.CheckedChanged += radioButtons_CheckedChanged;
             radioBook.CheckedChanged += radioButtons_CheckedChanged;
             radioADONet.CheckedChanged += radioButtons_CheckedChanged;
@@ -135,14 +135,14 @@ namespace WinFormClient
             if (radioAuthor.Checked)
             {
                 registerAuthorDAL();
-                CommonService = Container.Resolve<IServices<Author>>();
+                CommonService = MyContainer.Resolve<IServices<Author>>();
                 var authorService = (IServices<Author>)CommonService;
                 entityGridView.DataSource = authorService.GetAll();
             }
             else
             {
                 registerBookDAL();
-                CommonService = Container.Resolve<IServices<Book>>();
+                CommonService = MyContainer.Resolve<IServices<Book>>();
                 var bookService = (IServices<Book>)CommonService;
                 entityGridView.DataSource = bookService.GetAll();
             }
@@ -152,38 +152,38 @@ namespace WinFormClient
         {
             if (radioMyORM.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(MyORM<Author>));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(MyORM<Author>));
             }
             else if (radioFile.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>),typeof(AuthorFileAccessor));
+                MyContainer.RegisterType(typeof(IAccessor<>),typeof(AuthorFileAccessor));
             }
             else if (radioMemory.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(AuthorMemoryAccess));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(AuthorMemoryAccess));
             }
             else if (radioADONet.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(AuthorAdoNetAccessor));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(AuthorAdoNetAccessor));
             }
         }
         private void registerBookDAL() 
         {
             if (radioMyORM.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(MyORM<Book>));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(MyORM<Book>));
             }
             else if (radioFile.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(BookFileAccessor));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(BookFileAccessor));
             }
             else if (radioMemory.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(BookMemoryAccessor));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(BookMemoryAccessor));
             }
             else if (radioADONet.Checked)
             {
-                Container.RegisterType(typeof(IAccessor<>), typeof(BookAdoNetAccessor));
+                MyContainer.RegisterType(typeof(IAccessor<>), typeof(BookAdoNetAccessor));
             }
         }
     }

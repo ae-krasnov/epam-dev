@@ -125,7 +125,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{f06e761a-1bda-4342-9b64-242d9da66cee}</Project>
-      <Name>Entities</Name>
+      <Name>Entities %28Entities\Entities%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

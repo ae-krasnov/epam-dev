@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 using Microsoft.Practices.Unity;
 
-namespace ConsoleClient
+namespace Containers
 {
-    class UnityIoC : IContainer
+    public class AdapterUnity : IContainer
     {
         IUnityContainer _container;
-        public UnityIoC()
+        public AdapterUnity()
         {
             _container = new UnityContainer();
         }

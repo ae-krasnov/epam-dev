@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 using Autofac;
 
-namespace ConsoleClient
+namespace Containers
 {
-    class AutofacIoC : IContainer
+    public class AdapterAutofac : IContainer
     {
         ContainerBuilder _builder;
-        public AutofacIoC()
+        public AdapterAutofac()
         {
             _builder = new ContainerBuilder();
         }

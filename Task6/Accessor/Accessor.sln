@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{6F933F87-0218-42B3-BCF5-D379C24964FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{7A9B4DCA-8F8C-4B06-BDF1-303F07104C2D}"
@@ -22,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormClient", "UI\WinFormClient\WinFormClient.csproj", "{BF5E8D1D-8ECD-4777-A3B1-087A5A1B1A23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DAL\DataAccess.csproj", "{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Containers", "Containers", "{1E3C4BD9-6A3D-4DBB-BD60-ADECCCEE02A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Containers", "Containers\Containers.csproj", "{0702243D-B607-4A4E-9048-A370C3ADD567}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0702243D-B607-4A4E-9048-A370C3ADD567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0702243D-B607-4A4E-9048-A370C3ADD567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0702243D-B607-4A4E-9048-A370C3ADD567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0702243D-B607-4A4E-9048-A370C3ADD567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 		{BF5E8D1D-8ECD-4777-A3B1-087A5A1B1A23} = {7A9B4DCA-8F8C-4B06-BDF1-303F07104C2D}
 		{ECADB386-C048-42BE-970E-E81C6C23DE58} = {FC8230BC-B8C7-4F1D-88D4-1ECDBEF7C5ED}
 		{F06E761A-1BDA-4342-9B64-242D9DA66CEE} = {E96E976E-ED3B-40F5-B507-D50DC55064D9}
+		{0702243D-B607-4A4E-9048-A370C3ADD567} = {1E3C4BD9-6A3D-4DBB-BD60-ADECCCEE02A1}
 	EndGlobalSection
 EndGlobal

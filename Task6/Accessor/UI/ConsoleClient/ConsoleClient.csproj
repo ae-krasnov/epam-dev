@@ -51,27 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutofacIoC.cs" />
-    <Compile Include="IContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnityIoC.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Containers\Containers.csproj">
+      <Project>{0702243d-b607-4a4e-9048-a370c3add567}</Project>
+      <Name>Containers %28Containers\Containers%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DAL\DataAccess.csproj">
       <Project>{74fbd0e6-09d5-4518-8f6d-d24faa5cdcce}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Entities\Entities.csproj">
       <Project>{f06e761a-1bda-4342-9b64-242d9da66cee}</Project>
-      <Name>Entities</Name>
+      <Name>Entities %28Entities\Entities%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Services.csproj">
       <Project>{ecadb386-c048-42be-970e-e81c6c23de58}</Project>
-      <Name>Services</Name>
+      <Name>Services %28Services\Services%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

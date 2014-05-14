@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Reflection;
 using Microsoft.Practices.Unity;
 
+using Containers;
 using DataAccess;
 using Services;
 using Entities;
@@ -27,17 +28,17 @@ namespace ConsoleClient
             switch (Console.ReadLine().Trim())
             {
                 case "1":
-                    container = new UnityIoC();
+                    container = new AdapterUnity();
                     break;
                 case "2":
-                    container = new AutofacIoC();
+                    container = new AdapterAutofac();
                     break;
                 case "3":
-
+                    container = new MyContainer();
                     break;
                 default:
                     Console.WriteLine("Неверное значение, был выбран IoC по-умолчанию");
-                    container = new UnityIoC();
+                    container = new AdapterUnity();
                     break;
             }
             
