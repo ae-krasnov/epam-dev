@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\bin\Debug\UnitTestsForAccessor.dll" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-05-22" time="14:21:54">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5444" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\bin\Debug" machine-name="ANDREY-PC" user="Andrey" user-domain="Andrey-PC" />
+  <culture-info current-culture="ru-RU" current-uiculture="ru-RU" />
+  <test-suite type="Assembly" name="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\bin\Debug\UnitTestsForAccessor.dll" executed="True" result="Success" success="True" time="0.938" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="UnitTestsForAccessor" executed="True" result="Success" success="True" time="0.906" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestBookDal" executed="True" result="Success" success="True" time="0.901" asserts="0">
+            <results>
+              <test-case name="UnitTestsForAccessor.TestBookDal.TestFileDal" executed="True" result="Success" success="True" time="0.797" asserts="1" />
+              <test-case name="UnitTestsForAccessor.TestBookDal.TestMemoryDal" executed="True" result="Success" success="True" time="0.034" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

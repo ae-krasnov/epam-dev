@@ -1,0 +1,27 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <WorkingFolder>$(MSBuildProjectDirectory)</WorkingFolder>    
+    <Configuration>Debug</Configuration>
+    <SolutionFile>Accessor.sln</SolutionFile>
+  </PropertyGroup>  
+  
+<Target Name="BuildAll" DependsOnTargets="Compile;Test" />  
+
+  <Target Name="Compile">
+    <Message Text="=== COMPILING $(Configuration) configuration ===" />
+    <MSBuild Projects="$(SolutionFile)" 
+             Properties="Configuration=$(Configuration)" />
+  </Target>  
+
+  <Target Name="Test">
+    <ItemGroup>
+      <TestAssemblies 
+        Include="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\bin\Debug\UnitTestsForAccessor.dll" 
+        Exclude="C:\Program Files (x86)\NUnit 2.6.3\bin\nunit.exe" />
+    </ItemGroup>
+
+    <Message Text="=== RUNNING UNIT TESTS ==="/>
+    <NUnit Assemblies="@(TestAssemblies)" ToolPath="$(NUnitPath)" 
+          DisableShadowCopy="true" />
+  </Target>
+</Project>
