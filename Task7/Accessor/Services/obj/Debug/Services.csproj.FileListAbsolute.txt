@@ -72,3 +72,4 @@ C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\bin\Debug\NLo
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\obj\Debug\Services.dll
 C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\obj\Debug\Services.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\bin\Debug\libraryDB.sdf
