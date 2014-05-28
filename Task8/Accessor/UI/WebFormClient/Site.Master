@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebFormClient.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>WebClient</title>
+    <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script src="Script/jquery-2.0.3.min.js"></script>
+    <script src="Script/bootstrap.min.js"></script>
+    <form id="form1" runat="server">
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Элементы управления</h3>
+            </div>
+             <div class="panel-body">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="CaptchaHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+                <h3 class="panel-title">Время генерации</h3>
+            </div>
+            <div class="panel-body">
+                <footer><%:(DateTime.Now-(DateTime)Context.Items["loadstarttime"]) %> милисекунд</footer>
+            </div>
+    </div>
+</body>
+</html>

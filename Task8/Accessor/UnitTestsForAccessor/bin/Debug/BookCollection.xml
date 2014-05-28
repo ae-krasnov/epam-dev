@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ArrayOfBook xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Book>
+    <IdBook>11</IdBook>
+    <Author_id>1</Author_id>
+    <Name>Pro C# 5</Name>
+  </Book>
+  <Book>
+    <IdBook>22</IdBook>
+    <Author_id>2</Author_id>
+    <Name>Clr via C#</Name>
+  </Book>
+</ArrayOfBook>

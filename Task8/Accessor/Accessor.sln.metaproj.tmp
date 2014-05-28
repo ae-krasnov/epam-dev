@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore')" />
+  <Import Project="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\before.Accessor.sln.targets" Condition="exists('C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\before.Accessor.sln.targets')" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>Any CPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>Accessor.sln</SolutionFileName>
+    <SolutionName>Accessor</SolutionName>
+    <SolutionPath>C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Accessor.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and ('$(MSBuildToolsVersion)' == '3.5' or '$(MSBuildToolsVersion)' == '3.0')">v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '4.0'">v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{ECADB386-C048-42BE-970E-E81C6C23DE58}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\Services.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{F06E761A-1BDA-4342-9B64-242D9DA66CEE}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Entities\Entities.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C90D18F1-A812-411B-B2E9-B0B5535196D4}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\ConsoleClient\ConsoleClient.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{80E394C3-F167-4744-B43F-AB5B0DFB5089}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\WebFormClient\WebFormClient.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BF5E8D1D-8ECD-4777-A3B1-087A5A1B1A23}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\WinFormClient\WinFormClient.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\DAL\DataAccess.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{0702243D-B607-4A4E-9048-A370C3ADD567}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Containers\Containers.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{77C29619-4D01-455D-96CC-3C16677C51C4}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Loggers\Loggers.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{4DAD16B8-C500-4FFA-A60C-084F5750868E}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\UnitTestsForAccessor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+  <ProjectConfiguration Project="{ECADB386-C048-42BE-970E-E81C6C23DE58}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Services\Services.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{F06E761A-1BDA-4342-9B64-242D9DA66CEE}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Entities\Entities.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C90D18F1-A812-411B-B2E9-B0B5535196D4}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\ConsoleClient\ConsoleClient.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{80E394C3-F167-4744-B43F-AB5B0DFB5089}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\WebFormClient\WebFormClient.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BF5E8D1D-8ECD-4777-A3B1-087A5A1B1A23}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UI\WinFormClient\WinFormClient.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{74FBD0E6-09D5-4518-8F6D-D24FAA5CDCCE}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\DAL\DataAccess.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{0702243D-B607-4A4E-9048-A370C3ADD567}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Containers\Containers.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{77C29619-4D01-455D-96CC-3C16677C51C4}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\Loggers\Loggers.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{4DAD16B8-C500-4FFA-A60C-084F5750868E}" AbsolutePath="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\UnitTestsForAccessor\UnitTestsForAccessor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+</SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter')" />
+  <Import Project="C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\after.Accessor.sln.targets" Condition="exists('C:\Users\Andrey\Documents\epamRep\epam-dev\Task7\Accessor\after.Accessor.sln.targets')" />
+  <Target Name="Build" />
+  <Target Name="Rebuild" />
+  <Target Name="Clean" />
+  <Target Name="Publish" />
+</Project>

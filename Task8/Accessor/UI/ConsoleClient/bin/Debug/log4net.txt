@@ -1,0 +1,4 @@
+2014-05-14 21:43:20,338 [10] INFO  ConsoleClient.Program [(null)] - IoC-Unity
+2014-05-14 21:43:22,203 [10] INFO  ConsoleClient.Program [(null)] - entity-author
+2014-05-14 21:44:14,968 [11] DEBUG ConsoleClient.Program [(null)] - IoC-Unity
+2014-05-14 21:44:17,838 [11] DEBUG ConsoleClient.Program [(null)] - entity-author
