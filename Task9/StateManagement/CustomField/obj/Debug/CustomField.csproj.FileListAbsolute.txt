@@ -1,0 +1,5 @@
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task9\StateManagement\CustomField\bin\Debug\CustomField.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task9\StateManagement\CustomField\bin\Debug\CustomField.pdb
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task9\StateManagement\CustomField\obj\Debug\CustomField.csprojResolveAssemblyReference.cache
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task9\StateManagement\CustomField\obj\Debug\CustomField.dll
+C:\Users\Andrey\Documents\epamRep\epam-dev\Task9\StateManagement\CustomField\obj\Debug\CustomField.pdb
